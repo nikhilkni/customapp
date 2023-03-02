@@ -1,4 +1,5 @@
 {
+  "homepage": "http://nikhilkni.github.io/customapp",
   "name": "custom-application-project",
   "version": "1.0.0",
   "description": "",
@@ -6,6 +7,8 @@
   "scripts": {
     "build": "mc-scripts build",
     "start": "mc-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "compile-html": "mc-scripts compile-html",
     "compile-html:local": "MC_APP_ENV=development mc-scripts compile-html --transformer @commercetools-frontend/mc-dev-authentication/transformer-local.js",
     "start:prod:local": "yarn compile-html:local && mc-scripts serve",
@@ -72,5 +75,7 @@
     "react-router-dom": "5.3.4",
     "redux": "4.2.1"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "gh-pages": "^5.0.0"
+  }
 }
